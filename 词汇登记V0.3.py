@@ -41,7 +41,9 @@ db[lib_name].update(temp_db)
 
 with open('database2.txt', 'w', encoding='utf-8') as database:
 	db_str = str(db)
+	# 格式化字符串，以提高可读性
 	db_str = db_str.replace('],', '],\n')
 	db_str = db_str.replace('},', '},\n\n')
+	db_str = db_str.replace('\': {', '\': \n{')
 	database.write(db_str)
 	print('文件写入已完成')
